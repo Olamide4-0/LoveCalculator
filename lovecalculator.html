@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            background-color: azure;
+        }
+
+        .image{
+            width: 200px;
+        }
+
+        .two{
+            position: absolute;
+            bottom: 0; right: 0;
+        }
+        .first-div{
+            position: absolute;
+            top: 25%; left: 34%;
+            text-align: center;
+            width: 500px;
+        
+        }
+
+        .heading{
+            font-family: Comic Neue;
+            font-size: 60px;
+            margin-bottom: 10px;
+            color: pink;
+         }
+         .first-p{
+
+            font-size: 30px;
+            margin-top: 0;
+            color: lightsteelblue;
+            font-family: Comic Neue;
+
+         }
+         .first-button{
+            display: block;
+            position: relative;
+            left: 43%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 5px;
+            font-size: 18px;
+            background-color:pink;
+            border: none;
+            border-radius: 10px;
+            cursor: cell;
+         }
+
+         .input{
+            border-radius: 10px;
+            width: 200px;
+            height: 40px;
+            background-color: lavender;
+            border: 3px solid lavender;
+            font-size: 20px;
+            color: rgb(116, 79, 203);
+         }
+
+         #result, #commentary{
+            font-size: 25px;
+            margin-bottom: 10px;
+            font-family: Comic Neue;
+            color:purple;
+         }
+    </style>
+</head>
+<body>
+   <div class="first-div">
+    <h1 class="heading">Love Calculator</h1>
+    <p class="first-p"> Calculate Your Compatibility</p>
+    <input type="text" class="input" id="fname" placeholder="Enter your name">
+    <input type="text" class="input" id="sname" placeholder="Enter lover's name">
+    <button class="first-button" onclick="calculateLove()">Calculate</button>
+    <div id="result" ></div>
+    <div id="commentary"></div>
+   </div>
+    <img src="Images/heartt.png" alt="Heart" class="image one">
+    <img src="Images/heartt.png" alt="Heart" class="image two">
+    <footer style="position: fixed; bottom: 0;">Olamide made this</footer>
+
+    <script>
+        function calculateLove(){
+            var fname = document.getElementById('fname').value.trim();
+            var sname = document.getElementById('sname').value.trim();
+  
+            if (fname === '' || sname === '') {
+            alert('Please enter both names');
+            return;}
+
+            var loveScore = Math.floor(Math.random()*101);
+            var resultScore = ("Your love score is "+loveScore);
+            document.getElementById('result').textContent = resultScore;
+            var commentOne =("A match made in heaven!");
+            var commentTwo = ("Uhh no luck there :)");
+            var commentThree = ("Is it or is it not?");
+            
+            if (loveScore>50){document.getElementById('commentary').textContent =commentOne }
+           else if (loveScore<50){document.getElementById('commentary').textContent =commentTwo}
+           else if (loveScore=50){document.getElementById('commentary').textContent =commentThree}
+            
+
+        }
+        
+
+    </script>
+
+</body>
+</html>
